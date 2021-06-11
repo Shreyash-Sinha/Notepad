@@ -1,0 +1,25 @@
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+
+<BorderPane xmlns:fx="http://www.javafx.com/fxml" fx:controller="com.shreyashsinha.notepad.Controller" fx:id="mainPane">
+    <top>
+        <MenuBar>
+            <Menu text="File" style="-fx-font-size: 15px;">
+                <MenuItem text="Open" onAction="#handleOpen"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Save" onAction="#handleSave"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Save As" onAction="#handleSaveAs"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Exit" onAction="#handleClose"/>
+            </Menu>
+        </MenuBar>
+    </top>
+    <center>
+        <TextArea fx:id="textArea" style="-fx-font-size: 20px;"/>
+    </center>
+</BorderPane>
