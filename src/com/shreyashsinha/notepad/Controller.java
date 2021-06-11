@@ -132,4 +132,23 @@ public class Controller {
             }
         } catch (Exception ignored) {}
     }
+
+
+    @FXML
+    public void handleNew() {
+        if (!currentText.equals(textArea.getText())) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("File not Saved");
+            alert.setHeaderText(null);
+            alert.setContentText("File is not saved. Do you want to proceed?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.CANCEL) {
+                return;
+            }
+        }
+        file = null;
+        currentText = "";
+        isSaved = false;
+        textArea.clear();
+    }
 }
